@@ -61,11 +61,86 @@ nav {
     cursor: pointer;
 }
 
+.icon-menu {
+    --gap: 5px;
+    --height-bar: 2.5px;
+    --pos-y-bar-one: 0;
+    --pos-y-bar-three: 0;
+    --scale-bar: 1;
+    --rotate-bar-one: 0;
+    --rotate-bar-three: 0;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    cursor: pointer;
+    position: relative;
+    float: right;
+    padding-right: 1rem;
+  }
+  
+  .bar {
+    position: relative;
+    height: var(--height-bar);
+    width: 100%;
+    border-radius: .5rem;
+    background-color: #9941fc;
+  }
+  
+  .bar--1 {
+    top: var(--pos-y-bar-one);
+    transform: rotate(var(--rotate-bar-one));
+    transition: top 200ms 100ms, transform 100ms;
+  }
+  
+  .bar--2 {
+    transform: scaleX(var(--scale-bar));
+    transition: transform 150ms 100ms;
+  }
+  
+  .bar--3 {
+    bottom: var(--pos-y-bar-three);
+    transform: rotate(var(--rotate-bar-three));
+    transition: bottom 200ms 100ms, transform 100ms;
+  }
+  
+  .check-icon:checked + .icon-menu > .bar--1 {
+    transition: top 200ms, transform 200ms 100ms;
+  }
+  
+  .check-icon:checked + .icon-menu > .bar--3 {
+    transition: bottom 200ms, transform 200ms 100ms;
+  }
+  
+  .check-icon:checked + .icon-menu {
+    --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+    --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+    --scale-bar: 0;
+    --rotate-bar-one: 45deg;
+    --rotate-bar-three: -45deg;
+  }  
+
+  @media only screen and (min-width: 600px) {
+    .check-icon, .icon-menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        height: 8rem;
+        font-size: 6rem;
+    }
+
+    .nav-bar {
+        display:none;
+    }
+}
+
 /* Timeline */
 
 .cd-container {
   width: 90%;
-  /* max-width: 1080px; */
   margin: 0 auto;
   background: #2B343A;
   padding: 0 10%;
@@ -336,18 +411,6 @@ Main components
     scrollbar-color: #673AB7;
 }
 
-/* .projects::-webkit-scrollbar {
-    display: none;
-} */
-
-/* .projects::-webkit-scrollbar-thumb {
-    border: 5px solid transparent;
-    border-radius: 0.5;
-    background-color:#673AB7;
-    background-clip: content-box;
-} */
-
-/* ===== Scrollbar CSS ===== */
   /* Firefox */
   .projects {
     scrollbar-width: 10px;
