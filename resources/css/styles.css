@@ -331,13 +331,44 @@ Main components
     border-radius: 2px;
     display: flex;
     justify-content: flex-start;
-    overflow: scroll;
-    scrollbar-width: 0;
+    overflow-x: scroll;
+    overflow-y: auto;
+    scrollbar-color: #673AB7;
 }
 
-.projects::-webkit-scrollbar {
+/* .projects::-webkit-scrollbar {
     display: none;
-}
+} */
+
+/* .projects::-webkit-scrollbar-thumb {
+    border: 5px solid transparent;
+    border-radius: 0.5;
+    background-color:#673AB7;
+    background-clip: content-box;
+} */
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  .projects {
+    scrollbar-width: 10px;
+    scrollbar-color: #7E57C2 transparent;
+  }
+
+  /* Chrome, Edge, and Safari */
+  .projects::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .projects::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .projects::-webkit-scrollbar-thumb {
+    background-color: #7E57C2;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
 
 .projects::after {
     content: '';
@@ -387,4 +418,8 @@ footer img {
 
 .contact-details li {
     padding: 0.5rem 0;
+}
+
+.contact-details li:nth-child(1) {
+    font-size: 1.25rem;
 }
