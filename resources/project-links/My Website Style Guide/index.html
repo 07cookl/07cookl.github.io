@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
+      <link href="./resources/css/style.css" rel="stylesheet"> 
+        <h1>My Website Style Guide</h1>
+        <title>My Website Style Guide</title>
+    </head>
+      
+    <body>
+      <div class="container">
+        <h2>My Colours</h2>
+        <div class="colours">
+          <div class="colour-panel cool-blue">
+              <p class="cool-blue">Cool Blue</p>
+              <p class="cool-blue">#2d5dcc</p>
+          </div>
+          <div class="colour-panel pink">
+              <p class="pink">Pink</p>
+              <p class="pink">#d957d9</p>
+          </div>
+          <div class="colour-panel mint-green">
+              <p class="mint-green">Mint Green</p>
+              <p class="mint-green">#4fe0b0</p>
+          </div>
+          <div class="colour-panel beige">
+              <p class="beige">Beige</p>
+              <p class="beige">#efd9ca</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container">
+        <h2>My Fonts</h2>
+        <div class="fonts">
+            <div class="font-panel montserrat">
+                <p class="font-label montserrat">Montserrat</p>
+                <p class="regular montserrat">The quick brown fox jumps over the lazy dog.</p>
+                <p class="bold montserrat">The quick brown fox jumps over the lazy dog.</p>
+                <p class="thin montserrat">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+            <div class="font-panel rubik">
+                <p class="font-label rubik">Rubik</p>
+                <p class="regular rubik">The quick brown fox jumps over the lazy dog.</p>
+                <p class="bold rubik">The quick brown fox jumps over the lazy dog.</p>
+                <p class="thin rubik">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <h2>My Text Styles</h2>
+        <div class="text-style">
+            <div class="text-style-panel">
+                <h1>H1: Main Page Heading</h1>
+                <ul>
+                    <li>Font-Weight: 700</li>
+                    <li>Font-Size: 26px</li>
+                    <li>Font-Family: Montserrat</li>
+                </ul>
+            </div>
+            <div class="text-style-panel">
+                <h2>H2: Subheading</h2>
+                <ul>
+                    <li>Font-Weight: 500</li>
+                    <li>Font-Size: 18px</li>
+                    <li>Font-Family: Rubik</li>
+                </ul>
+            </div>
+            <div class="text-style-panel">
+                <p>P: Paragraph Text</p>
+                <ul>
+                    <li>Font-Weight: 400 (regular)</li>
+                    <li>Font-Size: 14px</li>
+                    <li>Font-Family: Rubik</li>
+                </ul>
+        </div>
+      </div>
+      </div>
+
+      <div class="container flex">
+        <h2>Grid Layout</h2>
+        <div class="grid">
+          <div class="box a">A</div>
+          <div class="box b">B</div>
+          <div class="box c">C</div>
+          <div class="box d">D</div>
+        </div>
+
+        <hr>
+
+        <div class="grid template">
+        <section class="header">
+            <h2>Header</h2>
+        </section>
+        <section class="nav">
+            <h2>Nav</h2>
+        </section>
+        <section class="left">
+            <h2>Left</h2>
+        </section>
+        <!-- <div class="overlap">
+            <h2>Overlap</h2>
+        </div> -->
+        <section class="right">
+            <h2>Right</h2>
+        </section>
+        <section class="footer">
+            <h2>Footer</h2>
+        </section>
+      </div>
+      </div>
+
+      <div class="container">
+        <h2>Resizing Image Content In Proportion</h2>
+        <p>.container { <br>
+            width: 50%; <br>
+            height: 200px; <br>
+            overflow: hidden; <br>
+        }<br>
+           <br>
+          .container img { <br>
+            max-width: 100%; <br>
+            height: auto; <br>
+            display: block; <br>
+          }</p>
+          <p>Use the CSS above as it is a very common design pattern used to scale images and videos proportionally.</p>
+      </div>
+      <div class="container flex">
+        <h2>Device Screen Sizes</h2>
+        <img src="./resources/screen-sizes.png">
+      </div>
+    </body>
+</html>

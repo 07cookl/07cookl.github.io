@@ -12,18 +12,10 @@
         <nav>
             <a class="name" href="#">Laurence Cook</a>
             <div class="dropdown">
-              <!-- <button onclick="myFunction()" class="dropbtn">
-              <input hidden="" class="check-icon" id="check-icon" name="check-icon" type="checkbox">
-              <label class="icon-menu" for="check-icon">
-                  <div class="bar bar--1"></div>
-                  <div class="bar bar--2"></div>
-                  <div class="bar bar--3"></div>
-              </label>
-              </button> -->
-              <button onclick="myFunction()" class="dropbtn icon-menu">
-                <span class="bar bar--1"></span>
-                <span class="bar bar--2"></span>
-                <span class="bar bar--3"></span>
+              <button onclick="dropDown()" class="dropbtn icon-menu">
+                <span id="bar--1" class="bar bar--1"></span>
+                <span id="bar--2" class="bar bar--2"></span>
+                <span id="bar--3" class="bar bar--3"></span>
               </button>
                 <div id="myDropdown" class="dropdown-content">
                   <a href="#about-me">About Me</a>
@@ -36,7 +28,7 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <header>
+        <main>
             <section id="cd-timeline" class="cd-container">
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
@@ -52,12 +44,18 @@
                               Present
                             </span>
                           </div>
-                        <p>Working alongside the designer team implementing the designs, also developing custom solutions to address team necessities.</p>
-                <ul class="content-skills">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                </ul>
+                        <div id="timeline-content-1" class="hidden">
+                          <p>Working alongside the designer team implementing the designs, also developing custom solutions to address team necessities.</p>
+                          <ul class="content-skills">
+                              <li>HTML</li>
+                              <li>CSS</li>
+                              <li>JavaScript</li>
+                          </ul>
+                        </div>
+                        <button onclick="toggleContent1()" class="timelinebtn">
+                          <span id="arrow-left-1" class="arrow-left"></span>
+                          <span id="arrow-right-1" class="arrow-right"></span>
+                        </button>
                     </div> <!-- cd-timeline-content -->
                 </div> <!-- cd-timeline-block -->
         
@@ -75,8 +73,14 @@
                               Sept 2022 - Present
                             </span>
                           </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-                        <span class="cd-date">Sept 2022</span>
+                          <div id="timeline-content-2" class="hidden">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+                            <span class="cd-date">Sept 2022</span>
+                          </div>
+                          <button onclick="toggleContent2()" class="timelinebtn">
+                            <span id="arrow-left-2" class="arrow-left"></span>
+                            <span id="arrow-right-2" class="arrow-right"></span>
+                          </button>
                     </div> <!-- cd-timeline-content -->
                 </div> <!-- cd-timeline-block -->
         
@@ -94,8 +98,14 @@
                               Sept 2017 - Aug 2022
                             </span>
                           </div>
+                          <div id="timeline-content-3" class="hidden">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
                         <span class="cd-date">Sept 2017</span>
+                        </div>
+                        <button onclick="toggleContent3()" class="timelinebtn">
+                          <span id="arrow-left-3" class="arrow-left"></span>
+                          <span id="arrow-right-3" class="arrow-right"></span>
+                        </button>
                     </div> <!-- cd-timeline-content -->
                 </div> <!-- cd-timeline-block -->
         
@@ -113,8 +123,14 @@
                               Sept 2016 - Aug 2017
                             </span>
                           </div>
+                          <div id="timeline-content-4" class="hidden">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
                         <span class="cd-date">Sept 2016</span>
+                        </div>
+                        <button onclick="toggleContent4()" class="timelinebtn">
+                          <span id="arrow-left-4" class="arrow-left"></span>
+                          <span id="arrow-right-4" class="arrow-right"></span>
+                        </button>
                     </div> <!-- cd-timeline-content -->
                 </div> <!-- cd-timeline-block -->
         
@@ -132,8 +148,14 @@
                               Sept 2013 - Aug 2016
                             </span>
                           </div>
+                          <div id="timeline-content-5" class="hidden">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
                         <span class="cd-date">Sept 2013</span>
+                        </div>
+                        <button onclick="toggleContent5()" class="timelinebtn">
+                          <span id="arrow-left-5" class="arrow-left"></span>
+                          <span id="arrow-right-5" class="arrow-right"></span>
+                        </button>
                     </div> <!-- cd-timeline-content -->
                 </div> <!-- cd-timeline-block -->
         
@@ -156,35 +178,33 @@
                     </div> cd-timeline-content
                 </div> cd-timeline-block -->
             </section> <!-- cd-timeline -->
-        </header>
-        <main>
             <section id="projects">
                 <h2 class="title">My Projects</h2>
                 <div class="projects">
                     <div class="project-container">
-                        <img class="project-image" src="./resources/images/Fotomatic Webpage.png">
+                        <a href="./resources/project-links/fotomatic_broken/index.html"><img class="project-image" src="./resources/images/Fotomatic Webpage.png"></a>
                         <h3 class="project-title">Fotomatic</h3>
-                        <p class="project-description">Description</p>
+                        <p class="project-description">This project developed my skills in debugging code and using documentation to support. This included using Chrome DevTools and searching the internet for solutions.</p>
                     </div>
                     <div class="project-container">
-                        <img class="project-image" src="./resources/images/Style Guide Webpage.png">
+                      <a href="./resources/project-links/My Website Style Guide/index.html"><img class="project-image" src="./resources/images/Style Guide Webpage.png"></a>
                         <h3 class="project-title">Style Guide</h3>
-                        <p class="project-description">Description</p>
+                        <p class="project-description">This project is a collection of many aspects of my learning so far. It includes reminders of several key developer tools that I have worked on and I intend for it to be a working document.</p>
                     </div>
                     <div class="project-container">
-                        <img class="project-image" src="./resources/images/Tea Cozy Webpage.png">
+                        <a href="./resources/project-links/Tea Cozy/index.html"><img class="project-image" src="./resources/images/Tea Cozy Webpage.png"></a>
                         <h3 class="project-title">Tea Cozy</h3>
-                        <p class="project-description">Description</p>
+                        <p class="project-description">This project further developed my CSS skills and included using CSS Flexbox to create flexible page layouts.</p>
                     </div>
                     <div class="project-container">
                         <img class="project-image" src="./resources/images/Portfolio Webpage.png">
                         <h3 class="project-title">Portfolio</h3>
-                        <p class="project-description">Description</p>
+                        <p class="project-description">This is the current portfolio page. I have really enjoyed designing my own page and using many of the skills I have learned through Codecademy and through my own research.</p>
                     </div>
                 </div>
             </section>
         </main>
-        <footer>
+        <footer id="contact">
             <img class="photo" src="./resources/images/Photo.png" href="#contact">
             <ul class="contact-details">
                 <li>Laurence Cook</li>

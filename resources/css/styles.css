@@ -17,6 +17,11 @@ html, body {
     box-sizing: border-box;
 }
 
+h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
 body {
     position: relative;
     top: 4rem;
@@ -43,7 +48,16 @@ nav {
 }
 
 .nav-bar li {
-    padding: 0 1rem;
+    padding: 1rem 1rem;
+}
+
+.nav-bar li:hover {
+  background-color: #7E57C2;
+}
+
+.nav-bar li:active {
+  background-color:#673AB7;
+
 }
 
 .nav-bar a, p {
@@ -62,17 +76,9 @@ nav {
 }
 
 .icon-menu {
-    --gap: 5px;
-    --height-bar: 2.5px;
-    --pos-y-bar-one: 0;
-    --pos-y-bar-three: 0;
-    --scale-bar: 1;
-    --rotate-bar-one: 0;
-    --rotate-bar-three: 0;
-    --width: 25px;
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
+    gap: 5px;
     cursor: pointer;
     position: relative;
     float: right;
@@ -81,44 +87,45 @@ nav {
 
 .bar {
     position: relative;
-    height: var(--height-bar);
-    width: var(--width);
+    height: 2.5px;
+    width: 25px;
     border-radius: .5rem;
     background-color: #7E57C2;
     z-index: -1;
 }
 
 .bar--1 {
-    top: var(--pos-y-bar-one);
-    transform: rotate(var(--rotate-bar-one));
-    transition: top 200ms 100ms, transform 100ms;
+    top: 0;
+    transform: rotate(0);
+    transition: top 200ms, transform 200ms;
 }
 
 .bar--2 {
-    transform: scaleX(var(--scale-bar));
-    transition: transform 150ms 100ms;
+    transform: scaleX(1);
+    transition: transform 200ms;
 }
 
 .bar--3 {
-    bottom: var(--pos-y-bar-three);
-    transform: rotate(var(--rotate-bar-three));
-    transition: bottom 200ms 100ms, transform 100ms;
+    bottom: 0;
+    transform: rotate(0);
+    transition: bottom 200ms, transform 200ms;
 }
 
-.check-icon:checked + .icon-menu > .bar--1 {
-    transition: top 200ms, transform 200ms 100ms;
+.bar--1-transformed {
+  top: 7.5px;
+  transform: rotate(45deg);
+  transition: top 200ms, transform 200ms;
 }
 
-.check-icon:checked + .icon-menu > .bar--3 {
-    transition: bottom 200ms, transform 200ms 100ms;
+.bar--2-transformed {
+  transform: scaleX(0);
+  transition: transform 200ms;
 }
 
-.check-icon:checked + .icon-menu {
-    --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
-    --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
-    --scale-bar: 0;
-    --rotate-bar-one: 45deg;
-    --rotate-bar-three: -45deg;
+.bar--3-transformed {
+  bottom: 7.5px;
+  transform: rotate(-45deg);
+  transition: top 200ms, transform 200ms;
 }
 
 nav button {
@@ -309,6 +316,7 @@ Main components
   background: #333C42;
   border-radius: 2px;
   padding: 1em;
+  display: grid;
 }
 
 .timeline-content-info {
@@ -391,6 +399,67 @@ Main components
   width: 0;
   border: 7px solid transparent;
   border-right: 7px solid #333C42;
+}
+
+.hidden {
+  display:none;
+}
+
+.timelinebtn {
+  background-color: transparent;
+  border: none;
+  height: 2rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  margin: 1rem auto 0 auto;
+  z-index: 10;
+}
+
+.timelinebtn:hover {
+  cursor: pointer;
+}
+
+.arrow-left, .arrow-right {
+  position: relative;
+  height: 2.5px;
+  width: 25px;
+  border-radius: .5rem;
+  background-color: #7E57C2;
+  z-index: -1;
+}
+
+.arrow-left {
+  transform: rotate(45deg);
+  right: -4.5px;
+  transition: transform 200ms;
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+  left: -4.5px;
+  transition: transform 200ms;
+}
+
+.arrow-left-transformed, .arrow-right-transformed {
+  position: relative;
+  height: 2.5px;
+  width: 25px;
+  border-radius: .5rem;
+  background-color: #7E57C2;
+  z-index: -1;
+}
+
+.arrow-left-transformed {
+  transform:rotate(-45deg);
+  right: -4.5px;
+  transition: transform 200ms;
+}
+
+.arrow-right-transformed {
+  transform: rotate(45deg);
+  left: -4.5px;
+  transition: transform 200ms;
 }
 
 @media only screen and (min-width: 768px) {
@@ -517,6 +586,12 @@ Main components
 
 .project-image {
   max-height: 200px;
+}
+
+.project-description {
+  height: 7rem;
+  line-height: 1.2rem;
+  text-align: center;
 }
 
 /* Footer */
