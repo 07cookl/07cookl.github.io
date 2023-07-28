@@ -184,7 +184,7 @@ nav button {
 }
 
 @media only screen and (min-width: 992px) {
-  .check-icon, .icon-menu {
+  .check-icon, .icon-menu, .dropdown-content {
     display: none;
 }
   button {
