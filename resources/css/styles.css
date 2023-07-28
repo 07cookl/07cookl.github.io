@@ -17,24 +17,14 @@ html, body {
     box-sizing: border-box;
 }
 
-h2 {
-  font-size: 1.5rem;
-}
-
 h3 {
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   margin: 1rem 0;
 }
 
 body {
     position: relative;
     top: 4rem;
-}
-
-@media only screen and (max-width: 991.98px) {
-  html, body {
-    font-size: 32px;
-  }
 }
 
 /* Nav Bar */
@@ -81,7 +71,6 @@ nav {
     font-size: 2rem;
     padding-left: 1rem;
 }
-
 .name:hover {
     cursor: pointer;
 }
@@ -89,7 +78,7 @@ nav {
 .icon-menu {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     cursor: pointer;
     position: relative;
     float: right;
@@ -98,8 +87,8 @@ nav {
 
 .bar {
     position: relative;
-    height: 5px;
-    width: 50px;
+    height: 2.5px;
+    width: 25px;
     border-radius: .5rem;
     background-color: #7E57C2;
     z-index: -1;
@@ -108,35 +97,35 @@ nav {
 .bar--1 {
     top: 0;
     transform: rotate(0);
-    transition: top 500ms, transform 500ms;
+    transition: top 200ms, transform 200ms;
 }
 
 .bar--2 {
     transform: scaleX(1);
-    transition: transform 500ms;
+    transition: transform 200ms;
 }
 
 .bar--3 {
     bottom: 0;
     transform: rotate(0);
-    transition: bottom 500ms, transform 500ms;
+    transition: bottom 200ms, transform 200ms;
 }
 
 .bar--1-transformed {
-  top: 15px;
+  top: 7.5px;
   transform: rotate(45deg);
-  transition: top 500ms, transform 500ms;
+  transition: top 200ms, transform 200ms;
 }
 
 .bar--2-transformed {
   transform: scaleX(0);
-  transition: transform 500ms;
+  transition: transform 200ms;
 }
 
 .bar--3-transformed {
-  bottom: 15px;
+  bottom: 7.5px;
   transform: rotate(-45deg);
-  transition: top 500ms, transform 500ms;
+  transition: top 200ms, transform 200ms;
 }
 
 nav button {
@@ -155,11 +144,11 @@ nav button {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 2.5rem;
-  right: 1.25rem;
-  font-size: 1.5rem;
+  top: 1.5rem;
+  right: 1rem;
+  font-size: 1rem;
   background-color:#40484D;
-  min-width: 300px;
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -174,7 +163,11 @@ nav button {
   background-color:#7E57C2;
 }
 
-@media only screen and (min-width: 992px) {
+.show {
+  display:block;
+}
+
+@media only screen and (min-width: 600px) {
     .check-icon, .icon-menu {
     display: none;
 }
@@ -188,7 +181,7 @@ body {
     top: 4rem;
 }
 
-@media only screen and (max-width: 991.98px) {
+@media only screen and (max-width: 600px) {
 nav {
     position: fixed;
     top: 0;
@@ -245,7 +238,7 @@ Main components
   background: #7E57C2;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1170px) {
   #cd-timeline {
     margin-top: 3em;
     margin-bottom: 3em;
@@ -275,7 +268,7 @@ Main components
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1170px) {
   .cd-timeline-block {
     margin: 4em 0;
   }
@@ -301,7 +294,7 @@ Main components
   background: #673AB7;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1170px) {
   .cd-timeline-img {
     width: 30px;
     height: 30px;
@@ -328,9 +321,9 @@ Main components
 
 .timeline-content-info {
     background: #2B343A;
-    padding: 10px 5px;
+    padding: 5px 5px;
     color: rgba(255,255,255,0.7);
-    font-size: 0.75rem;
+    font-size: 12px;
     box-shadow:  inset 0 2px 0 rgba(0, 0, 0, 0.08);
     border-radius: 2px;
     display: flex;
@@ -350,7 +343,7 @@ Main components
 }
 
 .content-skills {
-  font-size: 0.75rem;
+  font-size: 12px;
   padding:0;
   margin-bottom: 0;
   display:flex;
@@ -379,12 +372,12 @@ Main components
 .cd-timeline-content h2 {
   color: rgba(255,255,255,.9);
   margin-top:0;
-  margin-bottom: 0.75rem;
+  margin-bottom: 5px;
 }
 
 .cd-timeline-content p, .cd-timeline-content .cd-date {
   color: rgba(255,255,255,.7);
-  /* font-size: 13px; */
+  font-size: 13px;
   font-size: 0.8125rem;
 }
 
@@ -409,15 +402,7 @@ Main components
 }
 
 .hidden {
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 1000ms linear, opacity 1000ms ease-out;
-}
-
-.show {
-  max-height: 400px;
-  opacity: 1;
-  transition: max-height 1000ms ease-out, opacity 1000ms 200ms ease-out;
+  display:none;
 }
 
 .timelinebtn {
@@ -428,7 +413,7 @@ Main components
   display: flex;
   align-items: center;
   margin: 1rem auto 0 auto;
-  z-index: 4;
+  z-index: 10;
 }
 
 .timelinebtn:hover {
@@ -447,13 +432,13 @@ Main components
 .arrow-left {
   transform: rotate(45deg);
   right: -4.5px;
-  transition: transform 500ms;
+  transition: transform 200ms;
 }
 
 .arrow-right {
   transform: rotate(-45deg);
   left: -4.5px;
-  transition: transform 500ms;
+  transition: transform 200ms;
 }
 
 .arrow-left-transformed, .arrow-right-transformed {
@@ -468,64 +453,31 @@ Main components
 .arrow-left-transformed {
   transform:rotate(-45deg);
   right: -4.5px;
-  transition: transform 500ms;
+  transition: transform 200ms;
 }
 
 .arrow-right-transformed {
   transform: rotate(45deg);
   left: -4.5px;
-  transition: transform 500ms;
+  transition: transform 200ms;
 }
 
-@media only screen and (max-width:992px) {
-  .arrow-left, .arrow-right {
-    position: relative;
-    height: 5px;
-    width: 50px;
-    border-radius: .5rem;
-    background-color: #7E57C2;
-    z-index: -1;
-  }
-  .arrow-left {
-    transform: rotate(45deg);
-    right: -9px;
-    transition: transform 500ms;
-  }
-  .arrow-right {
-    transform: rotate(-45deg);
-    left: -9px;
-    transition: transform 500ms;
-  }
-  .arrow-left-transformed, .arrow-right-transformed {
-    position: relative;
-    height: 5px;
-    width: 50px;
-    border-radius: .5rem;
-    background-color: #7E57C2;
-    z-index: -1;
-  }
-  .arrow-left-transformed {
-    transform:rotate(-45deg);
-    right: -9px;
-    transition: transform 500ms;
-  }
-  .arrow-right-transformed {
-    transform: rotate(45deg);
-    left: -9px;
-    transition: transform 500ms;
-  }
-}
-
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
-    font-size: 1.75rem;
+    font-size: 20px;
+    font-size: 1.25rem;
   }
   .cd-timeline-content p {
+    font-size: 16px;
     font-size: 1rem;
   }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+    font-size: 14px;
     font-size: 0.875rem;
   }
+}
+
+@media only screen and (min-width: 1170px) {
   .cd-timeline-content {
     color: white;
     margin-left: 0;
@@ -577,7 +529,7 @@ Main components
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     padding: 2rem 0;
 }
@@ -633,25 +585,13 @@ Main components
 }
 
 .project-image {
-  max-height: 350px;
+  max-height: 200px;
 }
 
 .project-description {
   height: 7rem;
-  line-height: 1.5rem;
+  line-height: 1.2rem;
   text-align: center;
-}
-
-@media only screen and (max-width: 992px) {
-  .title {
-    font-size: 2rem;
-  }
-  .project-title {
-    font-size: 2rem;
-  }
-  .project-description {
-    line-height: 1.5rem;
-  }
 }
 
 /* Footer */
