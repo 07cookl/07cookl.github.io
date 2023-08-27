@@ -1,0 +1,215 @@
+/* 1. Univeral Styles */
+/* 2. Colour Styles */
+/* 3. Font Styles */
+/* 4. Using a Grid */
+/* 5. Using Flexbox */
+
+/* 1. Universal Styles */
+
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0 10%;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px), (orientation: portrait) {
+  .page-title {
+    width: 270px;
+  }
+  .gallery-item.thumbnail {
+    width: 95%;
+  }
+
+}
+
+img {
+  max-width: 80%;
+}
+
+@media only screen and (min-resolution: 150dpi) {
+  .logo {
+    background-image: url("../img/spaceship@2x.png");
+  }
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 2. Colour Styles */
+
+.container {
+    border:solid 1px black;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.colour-panel {
+    height: auto;
+    width: 32%;
+    min-height: 100px;
+    display: inline-block;
+    text-align:center;
+    margin-top: 10px;
+}
+
+.cool-blue {
+    background-color:#2d5dcc;
+    color:#fff;
+}
+
+.pink {
+    background-color: #d957d9;
+    color: #000;
+}
+
+.mint-green {
+    background-color:#4fe0b0;
+    color:#000;
+}
+
+.beige {
+    background-color:#efd9ca;
+    color:#000;
+}
+
+/* 3. Font Styles */
+
+.font-panel {
+    height: auto;
+    width: 46%;
+    min-height: 100px;
+    display: inline-block;
+    text-align:left;
+    margin-top: 10px;
+}
+
+.regular {
+    font-weight:normal;
+}
+
+.bold {
+    font-weight:700;
+}
+
+.thin {
+    font-weight:100;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rubik {
+    font-family: 'Rubik', sans-serif;
+}
+
+.font-label {
+    text-decoration:underline;
+    font-size: 18px;
+}
+
+.text-style-panel h1 {
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text-style-panel h2 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+}
+
+.text-style-panel p {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* 4. Using a Grid  */
+
+.grid {
+    border: 2px blue solid;
+    height: 500px;
+    width: 500px;
+    display: grid; /* Changes the display to be a grid */
+    grid-template: repeat(4, 1fr 2fr) / repeat(4, 2fr 3fr); /* Creates an 8x8 grid with fraction widths for each */
+    gap: 5px 10px; /* Creates a row and column gap of 5px */
+  }
+  
+  .box {
+    background-color: beige;
+    color: black;
+    border-radius: 5px;
+    border: 2px dodgerblue solid;
+  }
+
+  .a {
+    grid-area: 1 / 1 / span 2 / span 3;
+  }
+
+  .b {
+    grid-area: 3 / 1 / span 6 / span 2;
+  }
+
+  .c {
+    grid-area: 1 / 4 / span 2 / span 5;
+  }
+
+  .d {
+    grid-area: 3 / 3 / span 6 / span 6;
+  }
+
+  .grid.template {
+    display: grid;
+    max-width: 900px;
+    position: relative;
+    margin: auto;
+    gap: 10px;
+    grid-template-areas:    "header header"
+                            "nav nav" 
+                            "left right"
+                            "footer footer";
+    grid-template-rows: 2fr 1fr 4fr 1fr;
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .header {
+    background-color: dodgerblue;
+    grid-area: header;
+  }
+  
+  .nav {
+    background-color: beige;
+    grid-area: nav;
+  }
+  
+  .left {
+    background-color: dodgerblue;
+    grid-area: left;
+  }
+
+  /* .overlap {
+    background-color: red;
+    grid-area: 4 / 1 / 6 / 4;
+    z-index: 5;                 You can add an overlapping section by defining the grid template as numbers
+  } */
+  
+  .right {
+    background-color: beige;
+    grid-area: right;
+  }
+  
+  .footer {
+    background-color: dodgerblue;
+    grid-area: footer;
+  }
+
+  /* 5. Using Flexbox */
